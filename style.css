@@ -1,25 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     font-family: "PT Sans", sans-serif;
     font-optical-sizing: auto;
-
     box-sizing: border-box;
 }
 
 body{
     line-height: 1.5;
     background-color: #352F44;
-    overflow: hidden;
     /* giới thiệu */
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    display: flex;
 }
 
 /* Thanh dieu huong */
@@ -27,7 +20,7 @@ body{
     background-color: #5C5470;
     position: fixed;
     width: 60%;
-    height: 50px;
+    height: auto;
     border-radius: 10px;
     top: 30px;
     left: 50%;
@@ -68,23 +61,85 @@ body{
 /* ICON */
 .fa-solid{
     font-size: 22px;
-    padding: 10px;
+    padding: 5px;
 }
+
+/* Hinh anh */
+.img-box{
+    height: 600px;
+    width: 65%;
+    background-color: #200E3A;
+    left: 50%;
+    top: -50%;;
+    transform: translate(-50%, 30%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: fade 25s infinite;
+}
+
+
+/* Mỗi slide có độ trễ riêng */
+.img-slide:nth-child(1) { animation-delay: 0s; }
+.img-slide:nth-child(2) { animation-delay: 5s; }
+.img-slide:nth-child(3) { animation-delay: 10s; }
+.img-slide:nth-child(4) { animation-delay: 15s; }
+.img-slide:nth-child(5) { animation-delay: 20s; }
+
+/* Keyframes cho hiệu ứng mờ dần */
+@keyframes fade {
+    0%, 100%   { opacity: 0; }
+    10%, 30%   { opacity: 1; }
+    40%, 100%  { opacity: 0; }
+}
+
+.img-box .img-content p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* nền mờ nếu cần */
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Playwrite HU", cursive;
+}
+
 
 /* Giới thiệu */
 .info{
     display: flex;
-    gap: 100px;
+    gap: 200px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 500px 0 250px;
+    display: flex;
 }
 
 .line{
     width: 500px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    background-color: #7A85C1;
+    background-color: #6D5D6E;
     box-sizing: border-box; /*tránh padding làm tăng kích thước*/
-    padding: 25px;
+    padding: 23px;
     flex-direction: column;
     align-items: flex-start; /*căn nd ở lề trái*/
     text-align: left; /*căn chữ ở lề trái*/
@@ -97,13 +152,20 @@ body{
 
 .line ul{
     /* list-style-type: none; */
-    padding: 0; /*Xóa căn lề mặc định của ul*/
+    padding: 23px;  /*Xóa căn lề mặc định của ul*/
     margin: 0; /*Cái này như padding*/
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .line ul li{
     margin-bottom: 10px;
     line-height: 1.5; /*điều chỉnh chiều cao dòng đọc cho dễ*/
     font-size: 1.1em;
-    color: #E0E0E0;
+    color: #fff;
+}
+
+.line .line-en li{
+    font-size: 1.2em;
+    line-height: 1.7;
 }
