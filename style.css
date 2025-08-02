@@ -71,7 +71,7 @@ body{
     background-color: #200E3A;
     left: 50%;
     top: -50%;;
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 40%);
     border-radius: 10px;
     position: relative;
     overflow: hidden;
