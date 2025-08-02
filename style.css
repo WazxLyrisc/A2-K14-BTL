@@ -6,12 +6,20 @@
     font-family: "PT Sans", sans-serif;
     font-optical-sizing: auto;
 
+    box-sizing: border-box;
 }
 
 body{
     line-height: 1.5;
     background-color: #352F44;
     overflow: hidden;
+    /* giới thiệu */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
 }
 
 /* Thanh dieu huong */
@@ -61,4 +69,41 @@ body{
 .fa-solid{
     font-size: 22px;
     padding: 10px;
+}
+
+/* Giới thiệu */
+.info{
+    display: flex;
+    gap: 100px;
+}
+
+.line{
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #7A85C1;
+    box-sizing: border-box; /*tránh padding làm tăng kích thước*/
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start; /*căn nd ở lề trái*/
+    text-align: left; /*căn chữ ở lề trái*/
+}
+
+.line h1{
+    color: #FFD700;
+    text-align: center;
+}
+
+.line ul{
+    /* list-style-type: none; */
+    padding: 0; /*Xóa căn lề mặc định của ul*/
+    margin: 0; /*Cái này như padding*/
+}
+
+.line ul li{
+    margin-bottom: 10px;
+    line-height: 1.5; /*điều chỉnh chiều cao dòng đọc cho dễ*/
+    font-size: 1.1em;
+    color: #E0E0E0;
 }
