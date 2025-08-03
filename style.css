@@ -162,22 +162,23 @@ input:checked + .slider:before {
     opacity: 0;
     object-fit: cover;
     border-radius: 10px;
-    animation: fade 25s infinite;
+    animation: fade 24s infinite;
 }
 
+.img-box img:nth-child(1) { animation-delay: 0s; }
+.img-box img:nth-child(2) { animation-delay: 3s; }
+.img-box img:nth-child(3) { animation-delay: 6s; }
+.img-box img:nth-child(4) { animation-delay: 9s; }
+.img-box img:nth-child(5) { animation-delay: 12s; }
+.img-box img:nth-child(6) { animation-delay: 15s; }
+.img-box img:nth-child(7) { animation-delay: 18s; }
 
-/* Mỗi slide có độ trễ riêng */
-.img-slide:nth-child(1) { animation-delay: 0s; }
-.img-slide:nth-child(2) { animation-delay: 5s; }
-.img-slide:nth-child(3) { animation-delay: 10s; }
-.img-slide:nth-child(4) { animation-delay: 15s; }
-.img-slide:nth-child(5) { animation-delay: 20s; }
-
-/* Keyframes cho hiệu ứng mờ dần */
 @keyframes fade {
-    0%, 100%   { opacity: 0; }
-    10%, 30%   { opacity: 1; }
-    40%, 100%  { opacity: 0; }
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 .img-box .img-content p{
