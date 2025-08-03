@@ -8,12 +8,19 @@
     <script src="https://kit.fontawesome.com/eebcf2bcfc.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="navlink">
+    <nav id="navbar" class="navbar">
+        <ul class="navlink" id="nav-link">
             <li><a href="#"><i class="fa-solid fa-house"></i>Home.</a></li>
             <li><a href="/profile/"><i class="fa-solid fa-user"></i>Main.</a></li>
             <li><a href=""><i class="fa-solid fa-at"></i>Authors.</a></li>
+            <label class="theme-switch">
+                <input type="checkbox" id="toggle-theme">
+                <span class="slider"></span>
+            </label>
         </ul>
+        <div id="mobile-menu" class="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </nav>
 
     <div class="img-box">
@@ -56,6 +63,7 @@
             </ul>
         </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>

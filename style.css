@@ -9,15 +9,30 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #F5EFFF;
+    --text-color: #F5EFFF;
+    --accent-color: #CDC1FF;
+    --bgs-color: #A294F9;
+}
+
+[data-theme="dark"] {
+    --bg-color: #352F44;
+    --text-color: #fff;
+    --accent-color: #5C5470;
+    --bgs-color: #5C5470;
+}
+
 body{
     line-height: 1.5;
-    background-color: #352F44;
-    /* giới thiệu */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Thanh dieu huong */
 .navbar{
-    background-color: #5C5470;
+    background-color: var(--accent-color);
     position: fixed;
     width: 60%;
     height: auto;
@@ -26,6 +41,13 @@ body{
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 0 30px rgba(73, 65, 106, 0.975);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex: 2;
+    display: flex;
+    justify-content: center;
     z-index: 1;
 }
 
@@ -33,11 +55,12 @@ body{
 .navbar ul{
     list-style-type: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     height: 100%;
     padding: 0;
     margin: 0;
+    display: flex;
+    width: 100%;
 }
 
 .navbar a{
@@ -58,10 +81,65 @@ body{
     float: none;
 }
 
+.mobile-menu{
+    display: none;
+}
+
 /* ICON */
 .fa-solid{
     font-size: 22px;
     padding: 5px;
+}
+
+/* Sang toi */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: auto;
+    justify-content: center;
+    margin-left: 10px;
+    margin-left: auto;
+    align-items: center;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #9290C3;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Gạt sang phải khi bật */
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(42px);
 }
 
 /* Hinh anh */
@@ -137,7 +215,7 @@ body{
     height: auto;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    background-color: #6D5D6E;
+    background-color: var(--bgs-color);
     box-sizing: border-box; /*tránh padding làm tăng kích thước*/
     padding: 23px;
     flex-direction: column;
@@ -159,10 +237,11 @@ body{
 }
 
 .line ul li{
+    font-weight: 550;
     margin-bottom: 10px;
     line-height: 1.5; /*điều chỉnh chiều cao dòng đọc cho dễ*/
     font-size: 1.1em;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .line .line-en li{
