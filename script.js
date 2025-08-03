@@ -13,3 +13,10 @@
     if (savedTheme) {
     html.setAttribute('data-theme', savedTheme);
 }
+
+var mobileMenu = document.getElementById("mobile-menu");
+var navLink = document.getElementById("nav-link");
+
+mobileMenu.onclick = function () {
+  navLink.classList.toggle("show");
+};

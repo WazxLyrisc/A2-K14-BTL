@@ -265,6 +265,8 @@ input:checked + .slider::before {
         gap: 15px;
         align-items: flex-start;
         width: 100%;
+        display: inline-block;
+        text-align: left;
     }
     /* Thêm mới cho ul */
     .navbar ul{
@@ -284,7 +286,41 @@ input:checked + .slider::before {
         box-sizing: border-box;
         padding-left: 15px;
     }
-    
+
+    .navbar .mobile-menu{
+        position: relative;
+        color: #fff;
+        line-height: 30px;
+        padding: 0 20px;
+        top: 0;
+        left: 0;
+        font-size: 25px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+
+    #nav-link {
+        display: none;
+        flex-direction: column;
+        height: 130px;
+        background-color: var(--accent-color);
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+        z-index: 999;
+    }
+
+    #nav-link.show {
+        display: flex;
+    }
+
+    .navlink > li {
+        display: block;
+    }
+
     /*Chế độ sáng tối*/
     .theme-switch{
         /* margin-top: 6px; */
@@ -315,7 +351,11 @@ input:checked + .slider::before {
         transform: (-50%, 0);
         top: 0;
         margin-top: 120px;
-        height: 400px;
+        height: 300px;
+    }
+
+    .img-box .img-content p{
+        font-size: 15px;
     }
 
     /* Nội dung */
