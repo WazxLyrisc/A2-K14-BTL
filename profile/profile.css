@@ -9,11 +9,27 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #F5EFFF;
+    --text-color: #F5EFFF;
+    --accent-color: #CDC1FF;
+    --bgs-color: #A294F9;
+}
+
+[data-theme="dark"] {
+    --bg-color: #352F44;
+    --text-color: #fff;
+    --accent-color: #5C5470;
+    --bgs-color: #5C5470;
+}
+
 body{
     line-height: 1.5;
-    background-color: #352F44;
-    /* Thông tin */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 
+    /*Thông tin*/
     display: flex;
     padding: 20px;
     align-items: flex-start;
@@ -24,7 +40,7 @@ body{
 
 /* Thanh dieu huong */
 .navbar{
-    background-color: #5C5470;
+    background-color: var(--accent-color);
     position: fixed;
     width: 60%;
     height: auto;
@@ -33,6 +49,13 @@ body{
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 0 30px rgba(73, 65, 106, 0.975);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* flex: 2;
+    display: flex;
+    justify-content: center; */
     z-index: 1;
 }
 
@@ -40,11 +63,12 @@ body{
 .navbar ul{
     list-style-type: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: space-between; */
+    gap: 30px;
     height: 100%;
     padding: 0;
     margin: 0;
+    /* width: 100%; */
 }
 
 .navbar a{
@@ -53,16 +77,24 @@ body{
     font-size: 25px;
     font-weight: 700;
     transition: 0.5s;
+    /* Thêm chỉnh sửa cho Navbar */
+    display: flex; /*Đổi a qua flex container*/
+    align-items: center;
+    gap: 8px;
 }
 
 .navbar a:hover, a:active{
     color: #B9B4C7;
-    height: 10%;
+    /* height: 10%; */
 }
 
 .navbar li{
-    margin: 0 50px;
+    /* margin: 0 50px; */
     float: none;
+}
+
+.mobile-menu{
+    display: none;
 }
 
 /* ICON */
@@ -71,9 +103,58 @@ body{
     padding: 5px;
 }
 
-/* Hinh anh */
-/* Mỗi slide có độ trễ riêng */
-/* Keyframes cho hiệu ứng mờ dần */
+/* Sang toi */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    /* height: auto; */
+    height: 38px;
+    /* justify-content: center;
+    margin-left: 10px;
+    margin-left: auto;
+    align-items: center; */
+    flex-shrink: 0;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #9290C3;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Gạt sang phải khi bật */
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider::before {
+    transform: translateX(42px);
+}
 
 /* Phần thông tin từng thành viên trong lớp */
 
@@ -140,4 +221,164 @@ body{
     height: 100%;
     object-fit: cover; /*ảnh sẽ được điều chỉnh phù hợp với khung*/
     display: block;
+}
+
+/* Ipad, Tablet */
+@media (max-width: 1024px){
+    .navbar{ /*hợp với chiều dọc của điện thoại*/
+        padding: 10px 0;
+        gap: 15px;
+        align-items: flex-start;
+        width: 80%;
+        display: inline-block;
+        text-align: left;
+    }
+    
+    .navbar ul{
+        /* flex-direction: column;
+        align-items: flex-start; */
+        width: 100%;
+        gap: 10px;
+    }
+    .navbar a{
+        font-size: 1em;
+        flex-direction: row;
+        /* display: flex; */
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 600;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 15px;
+    }
+    
+    .theme-switch{
+        /* margin-top: 6px; */
+        position: absolute; /* Đặt tuyệt đối so với navbar */
+        top: 15px;
+        right: 15px;
+        width: 50px; /* Giảm kích thước switch */
+        height: 25px;
+        border-radius: 12.5px;
+        flex-shrink: 0;
+    }
+    
+    .slider{
+        border-radius: 12.5px;
+    }
+    .slider::before{
+        width: 21px; /* Giảm kích thước toggle*/
+        height: 21px;
+        top: 2px;
+        left: 2px;
+    }
+    input:checked + .slider::before{
+        transform: translateX(25px);
+    }
+
+    .social a{
+        font-size: 50px;
+        font-weight: 700;
+        padding: 50px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px){
+    /* Thanh điều hướng */
+    .navbar{
+        flex-direction: column; /*hợp với chiều dọc của điện thoại*/
+        padding: 10px 0;
+        gap: 15px;
+        align-items: flex-start;
+        width: 90%;
+        display: inline-block;
+        text-align: left;
+    }
+
+    /* Thêm mới cho ul */
+    .navbar ul{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .navbar a{
+        font-size: 1em;
+        flex-direction: row;
+        /* display: flex; */
+        justify-content: flex-start;
+        align-items: center;
+        /* font-weight: bold; */
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 15px;
+    }
+
+    .navbar .mobile-menu{
+        position: relative;
+        color: #fff;
+        line-height: 30px;
+        padding: 0 20px;
+        top: 0;
+        left: 0;
+        font-size: 25px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+
+    #nav-link {
+        display: none;
+        flex-direction: column;
+        height: 130px;
+        background-color: var(--accent-color);
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 999;
+    }
+
+    #nav-link.show {
+        display: flex;
+    }
+
+    .navlink > li {
+        display: block;
+    }
+
+    /*Chế độ sáng tối*/
+    .theme-switch{
+        /* margin-top: 6px; */
+        position: absolute; /* Đặt tuyệt đối so với navbar */
+        top: 15px;
+        right: 15px;
+        width: 50px; /* Giảm kích thước switch */
+        height: 25px;
+        border-radius: 12.5px;
+        flex-shrink: 0;
+    }
+
+    .slider{
+        border-radius: 12.5px;
+    }
+    .slider::before{
+        width: 21px; /* Giảm kích thước toggle*/
+        height: 21px;
+        top: 2px;
+        left: 2px;
+    }
+    input:checked + .slider::before{
+        transform: translateX(25px);
+    }
+    
+    .social a{
+        font-size: 35px;
+        font-weight: 700;
+        padding: 20px;
+    }
 }
