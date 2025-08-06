@@ -283,7 +283,7 @@ input:checked + .slider::before {
 
 
 /* Ipad, Tablet */
-@media (max-width: 1024px){
+@media (max-width: 1036px){
     .navbar{ /*hợp với chiều dọc của điện thoại*/
         padding: 10px 0;
         gap: 15px;
@@ -336,7 +336,8 @@ input:checked + .slider::before {
     }
 
     .img-box{
-        width: 80%;
+        width: 90%;
+        height: 650px;
     }
 
     .info{
