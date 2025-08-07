@@ -30,7 +30,7 @@ body{
     transition: background-color 0.3s, color 0.3s;
 
     /*Thông tin*/
-    display: flex;
+    display: block;
     padding: 20px;
     align-items: flex-start;
     justify-content: space-around;
@@ -53,9 +53,6 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    /* flex: 2;
-    display: flex;
-    justify-content: center; */
     z-index: 1;
 }
 
@@ -63,12 +60,10 @@ body{
 .navbar ul{
     list-style-type: none;
     display: flex;
-    /* justify-content: space-between; */
     gap: 30px;
     height: 100%;
     padding: 0;
     margin: 0;
-    /* width: 100%; */
 }
 
 .navbar a{
@@ -85,11 +80,9 @@ body{
 
 .navbar a:hover, a:active{
     color: #B9B4C7;
-    /* height: 10%; */
 }
 
 .navbar li{
-    /* margin: 0 50px; */
     float: none;
 }
 
@@ -108,12 +101,7 @@ body{
     position: relative;
     display: inline-block;
     width: 80px;
-    /* height: auto; */
     height: 38px;
-    /* justify-content: center;
-    margin-left: 10px;
-    margin-left: auto;
-    align-items: center; */
     flex-shrink: 0;
 }
 
@@ -235,15 +223,12 @@ input:checked + .slider::before {
     }
     
     .navbar ul{
-        /* flex-direction: column;
-        align-items: flex-start; */
         width: 100%;
         gap: 10px;
     }
     .navbar a{
         font-size: 1em;
         flex-direction: row;
-        /* display: flex; */
         justify-content: flex-start;
         align-items: center;
         font-weight: 600;
@@ -253,7 +238,6 @@ input:checked + .slider::before {
     }
     
     .theme-switch{
-        /* margin-top: 6px; */
         position: absolute; /* Đặt tuyệt đối so với navbar */
         top: 15px;
         right: 15px;
@@ -307,10 +291,8 @@ input:checked + .slider::before {
     .navbar a{
         font-size: 1em;
         flex-direction: row;
-        /* display: flex; */
         justify-content: flex-start;
         align-items: center;
-        /* font-weight: bold; */
         width: 100%;
         box-sizing: border-box;
         padding-left: 15px;
@@ -353,7 +335,6 @@ input:checked + .slider::before {
 
     /*Chế độ sáng tối*/
     .theme-switch{
-        /* margin-top: 6px; */
         position: absolute; /* Đặt tuyệt đối so với navbar */
         top: 15px;
         right: 15px;
@@ -380,5 +361,10 @@ input:checked + .slider::before {
         font-size: 35px;
         font-weight: 700;
         padding: 20px;
+    }
+
+    /*Nội dung*/
+    .container{
+        margin-top: 100px;
     }
 }
