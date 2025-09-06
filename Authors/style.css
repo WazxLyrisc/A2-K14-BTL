@@ -45,6 +45,9 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    /* flex: 2;
+    display: flex;
+    justify-content: center; */
     z-index: 1;
 }
 
@@ -52,10 +55,12 @@ body{
 .navbar ul{
     list-style-type: none;
     display: flex;
+    /* justify-content: space-between; */
     gap: 30px;
     height: 100%;
     padding: 0;
     margin: 0;
+    /* width: 100%; */
 }
 
 .navbar a{
@@ -72,9 +77,11 @@ body{
 
 .navbar a:hover, a:active{
     color: #B9B4C7;
+    /* height: 10%; */
 }
 
 .navbar li{
+    /* margin: 0 50px; */
     float: none;
 }
 
@@ -93,7 +100,12 @@ body{
     position: relative;
     display: inline-block;
     width: 80px;
+    /* height: auto; */
     height: 38px;
+    /* justify-content: center;
+    margin-left: 10px;
+    margin-left: auto;
+    align-items: center; */
     flex-shrink: 0;
 }
 
@@ -193,6 +205,58 @@ input:checked + .slider::before {
 }
 
 
+/* Giới thiệu */
+.info{
+    display: flex;
+    gap: 200px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 500px 0 150px;
+    display: flex;
+}
+
+.line{
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: var(--bgs-color);
+    box-sizing: border-box; /*tránh padding làm tăng kích thước*/
+    padding: 23px;
+    flex-direction: column;
+    align-items: flex-start; /*căn nd ở lề trái*/
+    text-align: left; /*căn chữ ở lề trái*/
+}
+
+.line h1{
+    color: #FFD700;
+    text-align: center;
+}
+
+.line ul{
+    /* list-style-type: none; */
+    padding: 23px;  /*Xóa căn lề mặc định của ul*/
+    margin: 0; /*Cái này như padding*/
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.line ul li{
+    font-weight: 550;
+    margin-bottom: 10px;
+    line-height: 1.5; /*điều chỉnh chiều cao dòng đọc cho dễ*/
+    font-size: 1.1em;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.line .line-en li{
+    font-size: 1.2em;
+    line-height: 1.7;
+}
+
 /* Mang xa hoi */
 .social{
     text-align: center;
@@ -221,8 +285,6 @@ input:checked + .slider::before {
 
 /* Ipad, Tablet */
 @media (max-width: 1036px){
-
-    /* Navbar */
     .navbar{ /*hợp với chiều dọc của điện thoại*/
         padding: 10px 0;
         gap: 15px;
@@ -274,7 +336,22 @@ input:checked + .slider::before {
         transform: translateX(25px);
     }
 
-    /* MẠNG xã hội */
+    .img-box{
+        width: 90%;
+        height: 650px;
+    }
+
+    .info{
+        flex-direction: column;
+        gap: 35px;
+        /* margin: 50px 0 250px; */
+        margin-bottom: 100px;
+        margin-top: 500px;
+    }
+    .line{
+        width: 90%;
+    }
+
     .social a{
         font-size: 50px;
         font-weight: 700;
@@ -306,8 +383,10 @@ input:checked + .slider::before {
     .navbar a{
         font-size: 1em;
         flex-direction: row;
+        /* display: flex; */
         justify-content: flex-start;
         align-items: center;
+        /* font-weight: bold; */
         width: 100%;
         box-sizing: border-box;
         padding-left: 15px;
@@ -350,6 +429,7 @@ input:checked + .slider::before {
 
     /*Chế độ sáng tối*/
     .theme-switch{
+        /* margin-top: 6px; */
         position: absolute; /* Đặt tuyệt đối so với navbar */
         top: 15px;
         right: 15px;
@@ -371,7 +451,31 @@ input:checked + .slider::before {
     input:checked + .slider::before{
         transform: translateX(25px);
     }
-    
+
+    /* Hình ảnh */
+    .img-box{
+        width: 90%;
+        transform: (-50%, 0);
+        top: 0;
+        margin-top: 120px;
+        height: 300px;
+    }
+
+    .img-box .img-content p{
+        font-size: 15px;
+    }
+
+    /* Nội dung */
+    .info{
+        flex-direction: column;
+        gap: 15px;
+        /* margin: 50px 0 250px; */
+        margin-bottom: 100px;
+        margin-top: 200px;
+    }
+    .line{
+        width: 90%;
+    }
     
     .social a{
         font-size: 35px;
