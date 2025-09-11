@@ -235,8 +235,16 @@ input:checked + .slider::before {
     text-align: center;
 }
 
+.line h2{
+    color: #FFD700;
+    text-align: center;
+}
+
 .line ul{
-    /* list-style-type: none; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    list-style-type: none;
     padding: 23px;  /*Xóa căn lề mặc định của ul*/
     margin: 0; /*Cái này như padding*/
     overflow-wrap: break-word;
@@ -249,7 +257,61 @@ input:checked + .slider::before {
     line-height: 1.5; /*điều chỉnh chiều cao dòng đọc cho dễ*/
     font-size: 1.1em;
     color: var(--text-color);
+}
+
+.line ul li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
     text-decoration: none;
+    color: var(--bg-color);
+    font-size: 30px;
+    white-space: nowrap;
+}
+
+.line ul li a .icon{
+    min-width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line ul li a .text h4{
+    white-space: nowrap;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.line ul li a .fa-facebook:hover{
+    color: aqua;
+}
+
+.line ul li a .fa-youtube:hover{
+    color: red;
+}
+
+.line ul li a .fa-tiktok:hover{
+    color: black;
+}
+
+.line ul li a .fa-github:hover{
+    color: #fff;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .line .line-en li{
