@@ -398,20 +398,21 @@ input:checked + .slider::before {
         transform: translateX(25px);
     }
 
-    .img-box{
+    /* .img-box{
         width: 90%;
         height: 650px;
-    }
+    } */
 
     .info{
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
         gap: 35px;
-        /* margin: 50px 0 250px; */
         margin-bottom: 100px;
-        margin-top: 500px;
+        margin-top: 200px;
     }
+
     .line{
-        width: 90%;
+        width: 47%;
     }
 
     .social a{
@@ -515,7 +516,7 @@ input:checked + .slider::before {
     }
 
     /* Hình ảnh */
-    .img-box{
+    /* .img-box{
         width: 90%;
         transform: (-50%, 0);
         top: 0;
@@ -525,7 +526,7 @@ input:checked + .slider::before {
 
     .img-box .img-content p{
         font-size: 15px;
-    }
+    } */
 
     /* Nội dung */
     .info{
